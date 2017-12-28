@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="9a05aa50-75f9-4ab9-bfe7-29eaee4c5aa6" name="GJH" url="http://turing.gjh.sk/~perinay.a">
+        <fileTransfer host="turing.gjh.sk" port="22" rootFolder="/home/2014/perinay.a/" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

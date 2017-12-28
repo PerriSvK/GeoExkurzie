@@ -31,7 +31,7 @@ class DBUtil
 
     public function getLoginData($u, $p)
     {
-        $res = $this->db->query("SELECT COUNT(*) AS total FROM users WHERE name='$u' AND pass='$p'");
+        $res = $this->db->query("SELECT COUNT(*) AS total FROM g_users WHERE name='$u' AND pass='$p'");
 
         return $res->fetch_assoc()['total'] == 1;
     }
