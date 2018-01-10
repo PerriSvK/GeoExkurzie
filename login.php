@@ -33,7 +33,8 @@
             {
                 if($api->loginUser($_POST['name'], hash("sha256", $_POST['pass'])))
                 {
-                    echo "Super!";
+                    echo "Super! Budete prihlaseny!";
+                    $_SESSION['token'] = $api->generateLoginToken($_POST['name']);
                     header("refresh:5;url=index.php");
                     die();
                 }

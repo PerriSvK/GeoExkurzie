@@ -13,146 +13,162 @@
     <table id="7" parent="2" name="doprava"/>
     <table id="8" parent="2" name="g_users"/>
     <table id="9" parent="2" name="prihlaseni"/>
-    <table id="10" parent="2" name="votes"/>
-    <table id="11" parent="2" name="zajazdy"/>
-    <column id="12" parent="7" name="id">
+    <table id="10" parent="2" name="tokens"/>
+    <table id="11" parent="2" name="votes"/>
+    <table id="12" parent="2" name="zajazdy"/>
+    <column id="13" parent="7" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="13" parent="7" name="text">
+    <column id="14" parent="7" name="text">
       <Position>2</Position>
       <DataType>varchar(200)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="14" parent="7" name="PRIMARY">
+    <key id="15" parent="7" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="15" parent="8" name="name">
+    <column id="16" parent="8" name="name">
       <Position>1</Position>
       <DataType>varchar(100)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="16" parent="8" name="pass">
+    <column id="17" parent="8" name="pass">
       <Position>2</Position>
       <DataType>text|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="17" parent="8" name="PRIMARY">
+    <key id="18" parent="8" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>name</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="18" parent="9" name="id">
+    <column id="19" parent="9" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="19" parent="9" name="meno">
+    <column id="20" parent="9" name="meno">
       <Position>2</Position>
       <DataType>varchar(70)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="20" parent="9" name="email">
+    <column id="21" parent="9" name="email">
       <Position>3</Position>
       <DataType>varchar(120)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="21" parent="9" name="turnus">
+    <column id="22" parent="9" name="turnus">
       <Position>4</Position>
       <DataType>varchar(50)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="22" parent="9" name="PRIMARY">
+    <key id="23" parent="9" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="23" parent="10" name="id">
+    <column id="24" parent="10" name="name">
+      <Position>1</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="25" parent="10" name="token">
+      <Position>2</Position>
+      <DataType>varchar(150)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="26" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>token</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="27" parent="11" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="24" parent="10" name="vtime">
+    <column id="28" parent="11" name="vtime">
       <Position>2</Position>
       <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="25" parent="10" name="ip">
+    <column id="29" parent="11" name="ip">
       <Position>3</Position>
       <DataType>varchar(100)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="26" parent="10" name="stats">
+    <column id="30" parent="11" name="stats">
       <Position>4</Position>
       <DataType>varchar(100)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="27" parent="10" name="PRIMARY">
+    <key id="31" parent="11" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="28" parent="11" name="hash">
+    <column id="32" parent="12" name="hash">
       <Position>1</Position>
       <DataType>varchar(5)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="29" parent="11" name="meno">
+    <column id="33" parent="12" name="meno">
       <Position>2</Position>
       <DataType>varchar(50)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="30" parent="11" name="cena">
+    <column id="34" parent="12" name="cena">
       <Position>3</Position>
       <DataType>int(6)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="31" parent="11" name="od">
+    <column id="35" parent="12" name="od">
       <Position>4</Position>
       <DataType>datetime|0</DataType>
     </column>
-    <column id="32" parent="11" name="do">
+    <column id="36" parent="12" name="do">
       <Position>5</Position>
       <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="33" parent="11" name="doprava">
+    <column id="37" parent="12" name="doprava">
       <Position>6</Position>
       <DataType>int(4)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="34" parent="11" name="popis">
+    <column id="38" parent="12" name="popis">
       <Position>7</Position>
       <DataType>mediumtext|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="35" parent="11" name="kapacita">
+    <column id="39" parent="12" name="kapacita">
       <Position>8</Position>
       <DataType>int(3)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="36" parent="11" name="ubytovanie">
+    <column id="40" parent="12" name="ubytovanie">
       <Position>9</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="37" parent="11" name="trvanie">
+    <column id="41" parent="12" name="trvanie">
       <Position>10</Position>
       <DataType>int(3)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="38" parent="11" name="lokacia">
+    <column id="42" parent="12" name="lokacia">
       <Position>11</Position>
       <DataType>varchar(150)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="39" parent="11" name="PRIMARY">
+    <key id="43" parent="12" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>hash</ColNames>
       <Primary>1</Primary>

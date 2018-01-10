@@ -35,4 +35,24 @@ class DBUtil
 
         return $res->fetch_assoc()['total'] == 1;
     }
+
+    public function setLoginToken($name, $token)
+    {
+        $this->db->query("DELETE FROM tokens WHERE name='$name'");
+        $this->db->query("INSERT INTO tokens(token, name) VALUES ('$token', '$name');");
+    }
+
+    public function isValidToken($token)
+    {
+        $res = $this->db->query("SELECT COUNT(*) as total FROM tokens WHERE token = '$token'");
+        $poc = $res->fetch_assoc();
+        return $poc['total'] > 0;
+    }
+
+    public function getUserByToken($token)
+    {
+        $res = $this->db->query("SELECT name FROM tokens WHERE token = '$token' LIMIT 1");
+        $poc = $res->fetch_assoc();
+        return $poc['name'];
+    }
 }

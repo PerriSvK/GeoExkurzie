@@ -1,7 +1,21 @@
 <?php
 
+session_start();
+
 require "frame/Api.class.php";
 $api = new Api();
+
+$logged = false;
+$user = "";
+
+if(isset($_SESSION['token']))
+{
+    if($api->isValidToken($_SESSION['token']))
+    {
+        $user = $api->getUserByToken($_SESSION['token']);
+        $logged = true;
+    }
+}
 
 ?>
 
@@ -41,6 +55,6 @@ $api = new Api();
             }
         ?>
         <footer style='text-align: center;'>BackEnd version: <?php echo $api->getBEVer(); ?><br>
-            <a href="login.php">[Administracia]</a></footer>
+            <?php if($logged) echo "[Logged: $user]"; else echo '<a href="login.php">[Administracia]</a></footer>'; ?>
     </body>
 </html>

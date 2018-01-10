@@ -57,4 +57,21 @@ class Api
     {
         return $this->db->getLoginData($name, $pass);
     }
+
+    function generateLoginToken($name)
+    {
+        $hash = hash("sha256", $name.time());
+        $this->db->setLoginToken($name, $hash);
+        return $hash;
+    }
+
+    function isValidToken($token)
+    {
+        return $this->db->isValidToken($token);
+    }
+
+    function getUserByToken($token)
+    {
+        return $this->db->getUserByToken($token);
+    }
 }
