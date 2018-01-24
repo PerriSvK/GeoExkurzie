@@ -2,8 +2,9 @@
 
 session_start();
 
-require "frame/Api.class.php";
-$api = new Api();
+require_once "frame/Api.class.php";
+require_once "frame/DBUtil.class.php";
+$api = new Api(require_once "Config.php");
 
 $logged = false;
 $user = "";

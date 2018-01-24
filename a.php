@@ -20,18 +20,18 @@
 
     require "frame/Api.class.php";
 
-    $api = new Api();
+    $api = new Api(require_once "Config.php");
 
     if(isset($_GET['p']))
     {
         echo $api->drawPost($_GET['p']);
     }
 
-    if($_GET['p'] != 0)
-        echo "<p style='text-align: center;'><a href='a.php?p=".($_GET['p']-1)."'> < Predchadzajuce</a></p>";
-
-    if(!$api->isLastPost($_GET['p']))
-        echo "<p style='text-align: center;'><a href='a.php?p=".($_GET['p']+1)."'>Dalej > </a></p>";
+//    if($_GET['p'] != 0)
+//        echo "<p style='text-align: center;'><a href='a.php?p=".($_GET['p']-1)."'> < Predchadzajuce</a></p>";
+//
+//    if(!$api->isLastPost($_GET['p']))
+//        echo "<p style='text-align: center;'><a href='a.php?p=".($_GET['p']+1)."'>Dalej > </a></p>";
 
     ?>
 </body>

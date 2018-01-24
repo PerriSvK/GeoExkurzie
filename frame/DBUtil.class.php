@@ -2,16 +2,18 @@
 
 class DBUtil
 {
+    /** @var  mysqli */
     private $db;
 
-    public function __construct($h, $u, $p, $n)
+    public function connect($h, $u, $p, $n)
     {
         $this->db = new mysqli($h, $u, $p, $n);
 
         if($this->db->errno)
-            die($this->db->error);
+            return false;
 
         mysqli_set_charset($this->db, "utf8");
+        return true;
     }
 
     public function getPosts()
@@ -54,5 +56,33 @@ class DBUtil
         $res = $this->db->query("SELECT name FROM tokens WHERE token = '$token' LIMIT 1");
         $poc = $res->fetch_assoc();
         return $poc['name'];
+    }
+
+    public function addPost($aa)
+    {
+        $sql = "INSERT INTO zajazdy VALUES(";
+
+        for($i = 0; $i < sizeof($aa); $i++)
+        {
+            $sql .= "'".$aa[$i]."'";
+
+            if($i < sizeof($aa)-1)
+                $sql .= ", ";
+        }
+
+        $sql .= ");";
+
+        $this->db->query($sql);
+
+        if($this->db->errno)
+            echo $this->db->error;
+    }
+
+    public function deletePost($hash)
+    {
+        $this->db->query("DELETE FROM `zajazdy` WHERE hash='$hash'");
+
+        if($this->db->errno)
+            echo $this->db->error;
     }
 }

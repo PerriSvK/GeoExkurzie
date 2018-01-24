@@ -35,7 +35,7 @@
                 {
                     echo "Super! Budete prihlaseny!";
                     $_SESSION['token'] = $api->generateLoginToken($_POST['name']);
-                    header("refresh:5;url=index.php");
+                    header("refresh:5;url=admin/");
                     die();
                 }
                 else
