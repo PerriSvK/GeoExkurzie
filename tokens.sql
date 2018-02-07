@@ -1,5 +1,0 @@
-CREATE TABLE tokens
-(
-  name VARCHAR(100) NOT NULL,
-  token VARCHAR(150) PRIMARY KEY NOT NULL
-);
