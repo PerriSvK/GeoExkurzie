@@ -1,18 +1,6 @@
 <html>
 <head>
-    <style>
-        @import url('https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:400');
-        p, h1, h2, h3, footer
-        {
-            font-family: 'Barlow Semi Condensed', sans-serif;
-            font-weight: 400;
-        }
-
-        b
-        {
-            font-weight: 600;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="css/post.css">
     <meta charset="UTF-8">
 </head>
 <body>
@@ -25,6 +13,11 @@
     if(isset($_GET['p']))
     {
         echo $api->drawPost($_GET['p']);
+    }
+
+    if(isset($_GET['h']))
+    {
+        echo $api->drawPostByHash($_GET['h']);
     }
 
 //    if($_GET['p'] != 0)

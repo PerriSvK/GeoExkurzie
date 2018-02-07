@@ -33,20 +33,48 @@ class Api
         return sizeof($this->posts);
     }
 
+    function drawPostByHash($hash)
+    {
+        $v = 0;
+
+        for($i = 0; $i < $this->posts; $i++)
+        {
+            if($this->posts[$i]['hash'] == $hash)
+            {
+                $v = $i;
+                break;
+            }
+        }
+
+        return $this->drawPost($v);
+    }
+
     function drawPost($pid)
     {
         $row =  $this->posts[$pid];
-        $s = "
-                <div style='text-align: center;'>
+        $s = "<div class='row'>
+                <div class='column about'>
                     <h3>".$row['meno']."</h3>
                     <p><b>Lokacia:</b> ".$row['lokacia']."<b> Cena: </b>".$row['cena']."</p>
                     <p><b>Zaciatok: </b>".$row['od']. "<b> Koniec:</b> ".$row['do']."</p>
                     <p><b>Popis:</b> ".$row['popis']."</p>
                     <p><b>Ubytovanie:</b> ".$row['ubytovanie']."</p>
                 </div><br>
+                <div class='column'>
                 ";
 
+        $s .= $this->drawImage($pid);
+        $s .= "</div></div>";
+
         return $s;
+    }
+
+    function drawImage($pid)
+    {
+        if($this->posts[$pid]['image'] != "" || $this->posts[$pid]['image'] != "none")
+        {
+            return "<img src='images/".$this->posts[$pid]['image']."' class='iimg'>";
+        }
     }
 
     function isLastPost($pi)

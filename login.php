@@ -15,7 +15,7 @@
 
         if(isset($_POST['a']) && $_POST['a'] == "login")
         {
-            $api = new Api();
+            $api = new Api(require_once "./Config.php");
 
             if(isset($_POST['name']) && $_POST['name'] != "")
             {
@@ -35,7 +35,7 @@
                 {
                     echo "Super! Budete prihlaseny!";
                     $_SESSION['token'] = $api->generateLoginToken($_POST['name']);
-                    header("refresh:5;url=admin/");
+                    header("refresh:3;url=admin/");
                     die();
                 }
                 else
